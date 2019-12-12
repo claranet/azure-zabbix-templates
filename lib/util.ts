@@ -17,7 +17,7 @@ export class Util {
   }
 
   static GetRowKeyTick(time: Date): string {
-    const dt = 253402300799999 - time.getTime();
+    const dt = 253402300799999 - (time.getTime() - 60000);
     let result = dt.toString() + "9999";
     while (result.length < 19) {
       result = "0" + result;
